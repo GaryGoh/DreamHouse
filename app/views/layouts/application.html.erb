@@ -6,12 +6,55 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
+
+
 <body>
 
 <%= render "layouts/header" %>
 <div class="container" style="padding-top: 50px;">
+  <% unless notice.nil? %>
+      <div class="alert alert-success">
+        <button class="close" data-dismiss="alert"><span class="fui-cross"></span></button>
+
+        <!-- Normal info-->
+        <%= notice %>
+      </div>
+  <% end %>
   <%= yield %>
 </div>
 
+
+<div class="container">
+  <footer class="text-center">
+    CS6408 Assignment - DreamHouse, by Mingqian Gao | 112122980
+  </footer>
+</div>
 </body>
 </html>
+
+
+
+<script>
+    $("select[nameui='huge']").selectpicker({style: 'btn-sm btn-primary', menuStyle: 'dropdown-inverse'});
+    $("select[nameui='large']").selectpicker({style: 'btn-lg btn-default'});
+    $("select[nameui='info']").selectpicker({style: 'btn-info'});
+    $("select[nameui='small']").selectpicker({style: 'btn-sm btn-warning'});
+
+    $(document).ready(function (e) {
+        $('#tablaDatos').pbTable({
+            selectable: true,
+            sortable: true,
+            toolbar: {
+                enabled: true,
+                filterBox: true,
+                tags: [
+                    {
+                        display: 'All',
+                        toSearch: ''
+                    }
+                ],
+                buttons: ['']
+            }
+        });
+    });
+</script>

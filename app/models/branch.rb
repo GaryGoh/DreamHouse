@@ -3,4 +3,9 @@ class Branch < ActiveRecord::Base
 
   has_many :staffs, :dependent => :destroy, :primary_key => "Sno", :foreign_key => "Sno", :class_name => "Staff"
   has_many :property_for_rents, :dependent => :destroy, :primary_key => "Pno", :foreign_key => "Pno", :class_name => "PropertyForRent"
+
+
+  validates :Bno, presence: true,
+            uniqueness: {case_sensitive: false, :message => "Bno cannot be the same"}
+
 end

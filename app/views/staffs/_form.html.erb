@@ -1,7 +1,9 @@
 <%= form_for(@staff) do |f| %>
     <% if @staff.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@staff.errors.count, "error") %> prohibited this staff from being saved:</h2>
+        <div class="alert">
+          <button class="close" data-dismiss="alert"><span class="fui-cross"></span></button>
+
+          <h7><%= pluralize(@staff.errors.count, "error") %> prohibited this staff from being saved:</h7>
 
           <ul>
             <% @staff.errors.full_messages.each do |msg| %>
@@ -12,54 +14,62 @@
     <% end %>
 
     <div class="field">
-      <%= f.label :Sno %>
-      <br>
-      <%= f.text_field :Sno %>
+      <div class="form-group">
+        <label class="control-label" for="inputError">Sno</label>
+        <%= f.text_field :Sno, :class => "form-control" %>
+      </div>
     </div>
     <div class="field">
-      <%= f.label :FName %>
-      <br>
-      <%= f.text_field :FName %>
+      <div class="form-group">
+        <label class="control-label" for="inputError">First Name</label>
+        <%= f.text_field :FName, :class => "form-control" %>
+      </div>
     </div>
     <div class="field">
-      <%= f.label :LName %>
-      <br>
-      <%= f.text_field :LName %>
+      <div class="form-group">
+        <label class="control-label" for="inputError">Last Name</label>
+        <%= f.text_field :LName, :class => "form-control" %>
+      </div>
     </div>
     <div class="field">
-      <%= f.label :Address %>
-      <br>
-      <%= f.text_field :Address %>
+      <div class="form-group">
+        <label class="control-label" for="inputError">Address</label>
+        <%= f.text_field :Address, :class => "form-control" %>
+      </div>
     </div>
     <div class="field">
-      <%= f.label :Tel_No %>
-      <br>
-      <%= f.text_field :Tel_No %>
+      <div class="form-group">
+        <label class="control-label" for="inputError">Tel_No</label>
+        <%= f.text_field :Tel_No, :class => "form-control" %>
+      </div>
     </div>
     <div class="field">
-      <%= f.label :Position %>
-      <br>
-      <%= f.text_field :Position %>
+      <div class="form-group">
+        <label class="control-label" for="inputError">Position</label>
+        <%= f.text_field :Position, :class => "form-control" %>
+      </div>
     </div>
     <div class="field">
       <%= f.label :Sex %>
       <br>
-      <%= f.text_field :Sex %>
+      <%= f.select :Sex, options_for_select([["Male", "Male"], ["Female", "Female"]]), {}, {:class => "selectpicker", :nameui => "huge"} %>
+
     </div>
     <div class="field">
       <%= f.label :DOB %>
       <br>
-      <%= f.date_select :DOB %>
+      <%= f.date_select :DOB, {}, {:class => "selectpicker", :nameui => "huge"}%>
     </div>
     <div class="field">
       <%= f.label :Salary %>
       <br>
-      <%= f.number_field :Salary %>
+      <%= f.number_field :Salary, :class => "form-control" %>
     </div>
     <div class="field">
-      <%= f.label :NIN %>
-      <br>
-      <%= f.text_field :NIN %>
+      <div class="form-group">
+        <label class="control-label" for="inputError">NIN</label>
+        <%= f.text_field :NIN, :class => "form-control" %>
+      </div>
     </div>
     <div class="field">
       <%= f.label :Bno %>
@@ -67,8 +77,11 @@
       <%= f.select :Bno, Branch.all.map { |s|
         [(s.Bno), s.Bno] }.uniq, {}, {:class => "selectpicker", :nameui => "huge"} %>
     </div>
-    <div class="actions">
-      <%= f.submit %>
+    <div class="form-group">
+
+      <div class="">
+        <%= f.submit class: "btn btn-primary", value: "Submit", disable_with: 'Submitting...' %>
+      </div>
     </div>
 <% end %>
 

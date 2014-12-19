@@ -1,7 +1,10 @@
-<h1>Listing clients</h1>
+<div class="container">
+  <h4 class="text-center">Listing clients</h4>
+  <div align="right"><a href="<%= new_client_path%>" class="btn btn-primary"><span class="fui-plus"></span> New a Client</a></div>
 
-<table>
-  <thead>
+
+  <table id="tablaDatos" class="table table-striped">
+    <thead>
     <tr>
       <th>Cno</th>
       <th>Fname</th>
@@ -11,29 +14,29 @@
       <th>Pref type</th>
       <th>Max rent</th>
       <th></th>
-      <th></th>
-      <th></th>
     </tr>
-  </thead>
+    </thead>
 
-  <tbody>
+    <tbody>
     <% @clients.each do |client| %>
-      <tr>
-        <td><%= client.Cno %></td>
-        <td><%= client.FName %></td>
-        <td><%= client.LName %></td>
-        <td><%= client.Address %></td>
-        <td><%= client.Tel_No %></td>
-        <td><%= client.Pref_type %></td>
-        <td><%= client.Max_rent %></td>
-        <td><%= link_to 'Show', client %></td>
-        <td><%= link_to 'Edit', edit_client_path(client) %></td>
-        <td><%= link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <tr>
+          <td><%= client.Cno %></td>
+          <td><%= client.FName %></td>
+          <td><%= client.LName %></td>
+          <td><%= client.Address %></td>
+          <td><%= client.Tel_No %></td>
+          <td><%= client.Pref_type %></td>
+          <td><%= client.Max_rent %></td>
+
+          <td>
+            <ul class="col-md-1"><%= link_to '<span class="fui-new" aria-hidden="true"></span>'.html_safe, edit_client_path(client) %></ul>
+            <ul class="col-md-1"><%= link_to '<span class="fui-trash" aria-hidden="true"></span>'.html_safe, client, method: :delete, data: {confirm: 'Are you sure?'} %></ul>
+          </td>
+
+        </tr>
     <% end %>
-  </tbody>
-</table>
+    </tbody>
+  </table>
 
-<br>
 
-<%= link_to 'New Client', new_client_path %>
+</div>

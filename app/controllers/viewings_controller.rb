@@ -28,7 +28,7 @@ class ViewingsController < ApplicationController
 
     respond_to do |format|
       if @viewing.save
-        format.html { redirect_to @viewing, notice: 'Viewing was successfully created.' }
+        format.html { redirect_to viewings_url, notice: 'Viewing was successfully created.' }
         format.json { render action: 'show', status: :created, location: @viewing }
       else
         format.html { render action: 'new' }
@@ -42,7 +42,7 @@ class ViewingsController < ApplicationController
   def update
     respond_to do |format|
       if @viewing.update(viewing_params)
-        format.html { redirect_to @viewing, notice: 'Viewing was successfully updated.' }
+        format.html { redirect_to viewings_url, notice: 'Viewing was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

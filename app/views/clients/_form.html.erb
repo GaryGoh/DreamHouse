@@ -1,45 +1,65 @@
 <%= form_for(@client) do |f| %>
-  <% if @client.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@client.errors.count, "error") %> prohibited this client from being saved:</h2>
+    <% if @client.errors.any? %>
+        <div id="alert">
+          <button class="close" data-dismiss="alert"><span class="fui-cross"></span></button>
 
-      <ul>
-      <% @client.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+          <h7><%= pluralize(@client.errors.count, "error") %> prohibited this client from being saved:</h7>
+
+          <ul>
+            <% @client.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <div class="form-group">
+        <label class="control-label" for="inputError">Cno</label>
+        <%= f.text_field :Cno, :class => "form-control" %>
+      </div>
     </div>
-  <% end %>
+    <div class="field">
+      <div class="form-group">
+        <label class="control-label" for="inputError">First Name</label>
+        <%= f.text_field :FName, :class => "form-control" %>
+      </div>
+    </div>
+    <div class="field">
+      <div class="form-group">
+        <label class="control-label" for="inputError">Last Name</label>
+        <%= f.text_field :LName, :class => "form-control" %>
+      </div>
+    </div>
+    <div class="field">
+      <div class="form-group">
+        <label class="control-label" for="inputError">Address</label>
+        <%= f.text_field :Address, :class => "form-control" %>
+      </div>
+    </div>
+    <div class="field">
+      <div class="form-group">
+        <label class="control-label" for="inputError">Tel_No</label>
+        <%= f.text_field :Tel_No, :class => "form-control" %>
+      </div>
+    </div>
+    <div class="field">
+      <%= f.label :Pref_type %>
+      <br>
+      <%= f.select :Pref_type, PropertyForRent.all.map { |s|
+        [(s.Type), s.Type] }.uniq, {}, {:class => "selectpicker", :nameui => "huge"} %>
+    </div>
 
-  <div class="field">
-    <%= f.label :Cno %><br>
-    <%= f.text_field :Cno %>
-  </div>
-  <div class="field">
-    <%= f.label :FName %><br>
-    <%= f.text_field :FName %>
-  </div>
-  <div class="field">
-    <%= f.label :LName %><br>
-    <%= f.text_field :LName %>
-  </div>
-  <div class="field">
-    <%= f.label :Address %><br>
-    <%= f.text_field :Address %>
-  </div>
-  <div class="field">
-    <%= f.label :Tel_No %><br>
-    <%= f.text_field :Tel_No %>
-  </div>
-  <div class="field">
-    <%= f.label :Pref_type %><br>
-    <%= f.select :Pref_type, PropertyForRent.all.map{ |s|
-      [(s.Type), s.Type] }.uniq, {}, { :class => "selectpicker", :nameui => "huge"} %>  </div>
-  <div class="field">
-    <%= f.label :Max_rent %><br>
-    <%= f.number_field :Max_rent %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="field">
+      <%= f.label :Max_rent %>
+      <br>
+      <%= f.number_field :Max_rent, :class => "form-control spinner" %>
+    </div>
+    <div class="form-group">
+
+      <div class="">
+        <%= f.submit class: "btn btn-primary", value: "Submit", disable_with: 'Submitting...' %>
+      </div>
+    </div>
 <% end %>
+

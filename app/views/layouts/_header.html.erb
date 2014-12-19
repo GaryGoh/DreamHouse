@@ -1,23 +1,37 @@
-<div class="navbar navbar-fixed-top">
-  <div class="navbar-inner">
-    <div class="container">
-      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a>
-      <a class="brand" href="/">Some Store</a>
-      <div class="nav-collapse">
-        <ul class="nav">
-          <li><%= link_to "Branch", branches_url%></li>
-          <li><%= link_to "Staff", staffs_url %></li>
-          <li><%= link_to "Property_for_rents", property_for_rents_url %></li>
-          <li><%= link_to "Client", clients_url %></li>
-          <li><%= link_to "Owner", owners_url %></li>
-          <li><%= link_to "Viewing", viewings_url %></li>
+<style>
+    body {
+        min-height: 2000px;
+        padding-top: 70px;
+    }
 
-        </ul>
-      </div>
+
+</style>
+
+<!-- Static navbar -->
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <ul class="nav navbar-nav">
+        <li><%= link_to "DreamHouse", root_url %></li>
+      </ul>
     </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><%= link_to "Branch", branches_url %></li>
+        <li><%= link_to "Staff", staffs_url %></li>
+        <li><%= link_to "Property_for_rents", property_for_rents_url %></li>
+        <li><%= link_to "Client", clients_url %></li>
+        <li><%= link_to "Owner", owners_url %></li>
+        <li><%= link_to "Viewing", viewings_url %></li>
+        <li align="right"><a href="http://ie.linkedin.com/pub/mingqian-gao/8b/48/a15/" class="btn btn-default btn-sm btn-social-linkedin">
+          <span class="fui-linkedin"></span>
+          <span class="btn-tip">Mingqian Gao</span>
+        </a></li>
+      </ul>
+    </div>
+    <!--/.nav-collapse -->
   </div>
 </div>
+
+
+

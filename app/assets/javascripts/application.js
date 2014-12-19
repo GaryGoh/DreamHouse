@@ -12,6 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require twitter/bootstrap
+//= require jquery
+//= require bootstrap-sprockets
 //= require turbolinks
+//= require pbTable
 //= require_tree .
+
+
+//= require bootstrap-select
+//= require jquery-ui-1.10.3.custom.min

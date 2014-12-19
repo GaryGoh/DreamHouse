@@ -1,40 +1,41 @@
-<h1>Listing branches</h1>
+<div class="container">
+  <h4 class="text-center">Listing branches</h4>
 
-<table>
-  <thead>
-  <tr>
-    <th>Bno</th>
-    <th>Street</th>
-    <th>Area</th>
-    <th>City</th>
-    <th>Pcode</th>
-    <th>Tel no</th>
-    <th>Fax no</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-  </thead>
+  <div align="right"><a href="<%= new_branch_path%>" class="btn btn-primary"><span class="fui-plus"></span> New a Branch</a></div>
 
-  <tbody>
-  <% @branches.each do |branch| %>
-      <tr>
-        <td><%= branch.Bno %></td>
-        <td><%= branch.Street %></td>
-        <td><%= branch.Area %></td>
-        <td><%= branch.City %></td>
-        <td><%= branch.Pcode %></td>
-        <td><%= branch.Tel_No %></td>
-        <td><%= branch.Fax_No %></td>
+  <table id="tablaDatos" class="table table-striped">
+    <thead>
+    <tr>
+      <th>Bno</th>
+      <th>Street</th>
+      <th>Area</th>
+      <th>City</th>
+      <th>Pcode</th>
+      <th>Tel no</th>
+      <th>Fax no</th>
+      <th></th>
 
-        <td><%= link_to 'Show', branch %></td>
-        <td><%= link_to 'Edit', edit_branch_path(branch) %></td>
-        <td><%= link_to 'Destroy', branch, method: :delete, data: {confirm: 'Are you sure?'} %></td>
-      </tr>
-  <% end %>
-  </tbody>
-</table>
+    </tr>
+    </thead>
+    <tbody>
+    <% @branches.each do |branch| %>
+        <tr>
+          <td><%= branch.Bno %></td>
+          <td><%= branch.Street %></td>
+          <td><%= branch.Area %></td>
+          <td><%= branch.City %></td>
+          <td><%= branch.Pcode %></td>
+          <td><%= branch.Tel_No %></td>
+          <td><%= branch.Fax_No %></td>
 
-<br>
+          <td>
+            <ul class="col-md-1"><%= link_to '<span class="fui-new" aria-hidden="true"></span>'.html_safe, edit_branch_path(branch) %></ul>
+            <ul class="col-md-1"><%= link_to '<span class="fui-trash" aria-hidden="true"></span>'.html_safe, branch, method: :delete, data: {confirm: 'Are you sure?'} %></ul>
+          </td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Branch', new_branch_path %>
+
+</div>

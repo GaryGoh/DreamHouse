@@ -1,7 +1,9 @@
 <%= form_for(@branch) do |f| %>
     <% if @branch.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@branch.errors.count, "error") %> prohibited this branch from being saved:</h2>
+        <div class="alert">
+          <button class="close" data-dismiss="alert"><span class="fui-cross"></span></button>
+
+          <h7><%= pluralize(@branch.errors.count, "error") %> prohibited this branch from being saved:</h7>
 
           <ul>
             <% @branch.errors.full_messages.each do |msg| %>
@@ -12,42 +14,58 @@
     <% end %>
 
     <div class="field">
-      <%= f.label :Bno %>
-      <br>
-      <%= f.text_field :Bno %>
-    </div>
-    <div class="field">
-      <%= f.label :Street %>
-      <br>
-      <%= f.text_field :Street %>
-    </div>
-    <div class="field">
-      <%= f.label :Area %>
-      <br>
-      <%= f.text_field :Area %>
-    </div>
-    <div class="field">
-      <%= f.label :City %>
-      <br>
-      <%= f.text_field :City %>
-    </div>
-    <div class="field">
-      <%= f.label :Pcode %>
-      <br>
-      <%= f.text_field :Pcode %>
+
+      <div class="form-group">
+        <label class="control-label" for="inputError">Bno</label>
+        <%= f.text_field :Bno, :class => "form-control" %>
+      </div>
+
     </div>
 
     <div class="field">
-      <%= f.label :Tel_No %>
-      <br>
-      <%= f.text_field :Tel_No %>
+      <div class="form-group">
+        <label class="control-label" for="inputError">Street</label>
+        <%= f.text_field :Street, :class => "form-control" %>
+      </div>
     </div>
     <div class="field">
-      <%= f.label :Fax_No %>
-      <br>
-      <%= f.text_field :Fax_No %>
+
+      <div class="form-group">
+        <label class="control-label" for="inputError">Area</label>
+        <%= f.text_field :Area, :class => "form-control" %>
+      </div>
     </div>
-    <div class="actions">
-      <%= f.submit %>
+    <div class="field">
+      <div class="form-group">
+        <label class="control-label" for="inputError">City</label>
+        <%= f.text_field :City, :class => "form-control" %>
+      </div>
+    </div>
+    <div class="field">
+      <div class="form-group">
+        <label class="control-label" for="inputError">PostCode</label>
+        <%= f.text_field :Pcode, :class => "form-control" %>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="form-group">
+        <label class="control-label" for="inputError">Tel_No</label>
+        <%= f.text_field :Tel_No, :class => "form-control" %>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="form-group">
+        <label class="control-label" for="inputError">Fax_No</label>
+        <%= f.text_field :Fax_No, :class => "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+
+      <div class="">
+        <%= f.submit class: "btn btn-primary", value: "Submit", disable_with: 'Submitting...' %>
+      </div>
     </div>
 <% end %>

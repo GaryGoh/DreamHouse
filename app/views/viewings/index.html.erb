@@ -1,33 +1,35 @@
-<h1>Listing viewings</h1>
+<div class="container">
+  <h4 class="text-center">Listing viewings</h4>
+  <div align="right"><a href="<%= new_viewing_path%>" class="btn btn-primary"><span class="fui-plus"></span> New a Viewing</a></div>
 
-<table>
-  <thead>
+  <table id="tablaDatos" class="table table-striped">
+    <thead>
     <tr>
       <th>Client</th>
-      <th>Propertyforrent</th>
+      <th>Property_for_rent</th>
       <th>Date</th>
       <th>Comment</th>
       <th></th>
-      <th></th>
-      <th></th>
     </tr>
-  </thead>
-
-  <tbody>
+    </thead>
+    <tbody>
     <% @viewings.each do |viewing| %>
-      <tr>
-        <td><%= viewing.client_id %></td>
-        <td><%= viewing.propertyForRent_id %></td>
-        <td><%= viewing.Date %></td>
-        <td><%= viewing.Comment %></td>
-        <td><%= link_to 'Show', viewing %></td>
-        <td><%= link_to 'Edit', edit_viewing_path(viewing) %></td>
-        <td><%= link_to 'Destroy', viewing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <tr>
+          <td><%= viewing.Cno %></td>
+          <td><%= viewing.Pno %></td>
+          <td><%= viewing.Date %></td>
+          <td><%= viewing.Comment %></td>
+
+          <td>
+            <ul class="col-md-1"><%= link_to '<span class="fui-new" aria-hidden="true"></span>'.html_safe, edit_viewing_path(viewing) %></ul>
+            <ul class="col-md-1"><%= link_to '<span class="fui-trash" aria-hidden="true"></span>'.html_safe, viewing, method: :delete, data: {confirm: 'Are you sure?'} %></ul>
+          </td>
+
+        </tr>
     <% end %>
-  </tbody>
-</table>
+    </tbody>
+  </table>
 
-<br>
 
-<%= link_to 'New Viewing', new_viewing_path %>
+</div>
+

@@ -6,5 +6,6 @@ class PropertyForRent < ActiveRecord::Base
   belongs_to :branch
   belongs_to :staff
 
-  validates :Pno, presence: true
+  validates :Pno, presence: true,
+            uniqueness: {case_sensitive: false, :message => "Pno cannot be the same"}
 end

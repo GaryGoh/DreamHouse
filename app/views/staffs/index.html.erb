@@ -1,7 +1,9 @@
-<h1>Listing staffs</h1>
+<div class="container">
+  <h4 class="text-center">Listing staffs</h4>
+  <div align="right"><a href="<%= new_staff_path%>" class="btn btn-primary"><span class="fui-plus"></span> New a Staff</a></div>
 
-<table>
-  <thead>
+  <table id="tablaDatos" class="table table-striped">
+    <thead>
     <tr>
       <th>Sno</th>
       <th>Fname</th>
@@ -15,33 +17,30 @@
       <th>Nin</th>
       <th>Branch</th>
       <th></th>
-      <th></th>
-      <th></th>
     </tr>
-  </thead>
-
-  <tbody>
+    </thead>
+    <tbody>
     <% @staffs.each do |staff| %>
-      <tr>
-        <td><%= staff.Sno %></td>
-        <td><%= staff.FName %></td>
-        <td><%= staff.LName %></td>
-        <td><%= staff.Address %></td>
-        <td><%= staff.Tel_No %></td>
-        <td><%= staff.Position %></td>
-        <td><%= staff.Sex %></td>
-        <td><%= staff.DOB %></td>
-        <td><%= staff.Salary %></td>
-        <td><%= staff.NIN %></td>
-        <td><%= staff.Bno %></td>
-        <td><%= link_to 'Show', staff %></td>
-        <td><%= link_to 'Edit', edit_staff_path(staff) %></td>
-        <td><%= link_to 'Destroy', staff, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <tr>
+          <td><%= staff.Sno %></td>
+          <td><%= staff.FName %></td>
+          <td><%= staff.LName %></td>
+          <td><%= staff.Address %></td>
+          <td><%= staff.Tel_No %></td>
+          <td><%= staff.Position %></td>
+          <td><%= staff.Sex %></td>
+          <td><%= staff.DOB %></td>
+          <td><%= staff.Salary %></td>
+          <td><%= staff.NIN %></td>
+          <td><%= staff.Bno %></td>
+          <td>
+            <ul class="col-md-1"><%= link_to '<span class="fui-new" aria-hidden="true"></span>'.html_safe, edit_staff_path(staff) %></ul>
+            <ul class="col-md-1"><%= link_to '<span class="fui-trash" aria-hidden="true"></span>'.html_safe, staff, method: :delete, data: {confirm: 'Are you sure?'} %></ul>
+          </td>
+        </tr>
     <% end %>
-  </tbody>
-</table>
+    </tbody>
+  </table>
 
-<br>
 
-<%= link_to 'New Staff', new_staff_path %>
+</div>

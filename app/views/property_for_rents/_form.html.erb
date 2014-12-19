@@ -1,8 +1,11 @@
 <%= form_for(@property_for_rent) do |f| %>
     <% if @property_for_rent.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@property_for_rent.errors.count, "error") %> prohibited this property_for_rent from being
-            saved:</h2>
+        <div class="alert">
+          <button class="close" data-dismiss="alert"><span class="fui-cross"></span></button>
+
+          <h7><%= pluralize(@property_for_rent.errors.count, "error") %> prohibited this property_for_rent from being
+            saved:
+          </h7>
 
           <ul>
             <% @property_for_rent.errors.full_messages.each do |msg| %>
@@ -13,44 +16,53 @@
     <% end %>
 
     <div class="field">
-      <%= f.label :Pno %>
-      <br>
-      <%= f.text_field :Pno %>
+      <div class="form-group">
+        <label class="control-label" for="inputError">Pno</label>
+        <%= f.text_field :Pno, :class => "form-control" %>
+      </div>
     </div>
     <div class="field">
-      <%= f.label :Street %>
-      <br>
-      <%= f.text_field :Street %>
+      <div class="form-group">
+        <label class="control-label" for="inputError">Street</label>
+        <%= f.text_field :Street, :class => "form-control" %>
+      </div>
     </div>
     <div class="field">
-      <%= f.label :Area %>
-      <br>
-      <%= f.text_field :Area %>
+
+      <div class="form-group">
+        <label class="control-label" for="inputError">Area</label>
+        <%= f.text_field :Area, :class => "form-control" %>
+      </div>
     </div>
     <div class="field">
-      <%= f.label :City %>
-      <br>
-      <%= f.text_field :City %>
+      <div class="form-group">
+        <label class="control-label" for="inputError">City</label>
+        <%= f.text_field :City, :class => "form-control" %>
+      </div>
     </div>
     <div class="field">
-      <%= f.label :Pcode %>
-      <br>
-      <%= f.text_field :Pcode %>
+      <div class="form-group">
+        <label class="control-label" for="inputError">PostCode</label>
+        <%= f.text_field :Pcode, :class => "form-control" %>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="form-group">
+        <label class="control-label" for="inputError">Type</label>
+        <%= f.text_field :Type, :class => "form-control" %>
+      </div>
     </div>
     <div class="field">
-      <%= f.label :Type %>
-      <br>
-      <%= f.text_field :Type %>
-    </div>
-    <div class="field">
-      <%= f.label :Rooms %>
-      <br>
-      <%= f.number_field :Rooms %>
+      <div class="form-group">
+        <label class="control-label" for="inputError">Rooms</label>
+        <%= f.text_field :Rooms, :class => "form-control" %>
+      </div>
     </div>
     <div class="field">
       <%= f.label :Rent %>
       <br>
-      <%= f.number_field :Rent %>
+      <%= f.number_field :Rent, :class => "form-control spinner" %>
     </div>
     <div class="field">
       <%= f.label :Ono %>
@@ -62,8 +74,8 @@
     <div class="field" id="branch-select">
       <%= f.label :Bno %>
       <br>
-      <%= f.collection_select :Bno, Branch.all.uniq, :Bno, :Bno, :promot => "Select a Bno then select a Sno" %>
-
+      <%= f.select :Ono, Branch.all.map { |s|
+        [(s.Bno), s.Bno] }.uniq, {}, {:class => "selectpicker", :nameui => "huge"} %>
     </div>
 
     <div class="field" id="staff-field">
@@ -74,8 +86,11 @@
 
     </div>
 
-    <div class="actions">
-      <%= f.submit %>
+    <div class="form-group">
+
+      <div class="">
+        <%= f.submit class: "btn btn-primary", value: "Submit", disable_with: 'Submitting...' %>
+      </div>
     </div>
 <% end %>
 

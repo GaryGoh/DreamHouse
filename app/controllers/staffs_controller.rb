@@ -25,10 +25,10 @@ class StaffsController < ApplicationController
   # POST /staffs.json
   def create
     @staff = Staff.new(staff_params)
-
+    @gender = ['Man' => 'male', 'Woman' => 'female']
     respond_to do |format|
       if @staff.save
-        format.html { redirect_to @staff, notice: 'Staff was successfully created.' }
+        format.html { redirect_to staffs_url, notice: 'Staff was successfully created.' }
         format.json { render action: 'show', status: :created, location: @staff }
       else
         format.html { render action: 'new' }
@@ -42,7 +42,7 @@ class StaffsController < ApplicationController
   def update
     respond_to do |format|
       if @staff.update(staff_params_update)
-        format.html { redirect_to @staff, notice: 'Staff was successfully updated.' }
+        format.html { redirect_to staffs_url, notice: 'Staff was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

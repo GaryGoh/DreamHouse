@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141218150441) do
+ActiveRecord::Schema.define(version: 20141219131451) do
 
   create_table "branches", force: true do |t|
     t.string   "Bno",        null: false
@@ -75,6 +75,11 @@ ActiveRecord::Schema.define(version: 20141218150441) do
     t.integer  "Salary"
     t.string   "NIN"
     t.string   "Bno"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "trigrams", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end

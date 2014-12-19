@@ -31,7 +31,7 @@ class PropertyForRentsController < ApplicationController
 
     respond_to do |format|
       if @property_for_rent.save
-        format.html { redirect_to @property_for_rent, notice: 'Property for rent was successfully created.' }
+        format.html { redirect_to property_for_rents_url, notice: 'Property for rent was successfully created.' }
         format.json { render action: 'show', status: :created, location: @property_for_rent }
       else
         format.html { render action: 'new' }
@@ -45,7 +45,7 @@ class PropertyForRentsController < ApplicationController
   def update
     respond_to do |format|
       if @property_for_rent.update(property_for_rent_params_update)
-        format.html { redirect_to @property_for_rent, notice: 'Property for rent was successfully updated.' }
+        format.html { redirect_to property_for_rents_url, notice: 'Property for rent was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

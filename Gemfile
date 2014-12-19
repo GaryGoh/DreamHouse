@@ -34,7 +34,10 @@ end
 
 gem 'mysql2'
 
-gem "twitter-bootstrap-rails"
+gem 'autoprefixer-rails'
+gem 'bootstrap-sass', '~> 3.3.1'
+
+gem 'fuzzily'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
