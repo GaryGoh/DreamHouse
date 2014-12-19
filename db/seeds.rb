@@ -3,194 +3,609 @@
 #
 # Examples:
 #
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
+#   cities = City.create( name: 'Chicago' ,  name: 'Copenhagen' )
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-insert into branch values
-('B5', '22 Deer Rd', 'Sidcup', 'London', 'SW1 4EH', '0171-886-1212', '0171-886-1214');
+Branch.create(
 
-Branch.create([
-                  {
-                      Bno: 'B5'
-                  },
-                  {
-                      Tel_No: '0171-886-1212'
-                  },
-                  {
-                      Fax_No: '0171-886-1214'
-                  },
-              ])
+    Bno: 'B5',
+    Street: '22 Deer Rd',
+    Area: 'Sidcup',
+    City: 'London',
+    Pcode: 'SW1 4EH',
+    Tel_No: '0171-886-1212',
+    Fax_No: '0171-886-1214'
+)
 
-Branch.create([
-                  {
-                      Bno: 'B7'
-                  },
-                  {
-                      Tel_No: '01224-67125'
-                  },
-                  {
-                      Fax_No: '01224-67111'
-                  },
-              ])
+Branch.create(
 
-Branch.create([
-                  {
-                      Bno: 'B3'
-                  },
-                  {
-                      Tel_No: '0141-339-2178'
-                  },
-                  {
-                      Fax_No: '0141-339-4439'
-                  },
-              ])
+    Bno: 'B7',
 
-Branch.create([
-                  {
-                      Bno: 'B4'
-                  },
-                  {
-                      Tel_No: '0117-916-1170'
-                  },
-                  {
-                      Fax_No: '0117-776-1114'
-                  },
-              ])
+    Street: '16 Argyll St',
 
-Branch.create([
-                  {
-                      Bno: 'B2'
-                  },
-                  {
-                      Tel_No: '0181-963-1030'
-                  },
-                  {
-                      Fax_No: '0181-453-7992'
-                  },
-              ])
+    Area: 'Dyce',
 
-Staff.create([
-                  {
-                      Bno: 'SL21'
-                  },
-                  {
-                      FName: 'John'
-                  },
-                  {
-                      LName: 'White'
-                  },
-                  {
-                      Address: '19 Taylor St, Cranford, London'
-                  },
-                  {
-                      Tel_No: '0171-884-5112'
-                  },
-                  {
-                      Sex: 'M'
-                  },
-                  {
-                      DOB: '1945-10-01'
-                  },
-                  {
-                      Salary: 30000
-                  },
-                  {
-                      NIN: 'WK442011B'
-                  }
-              ])
+    City: 'Aberdeen',
 
-Staff.create([
-                 {
-                     Bno: 'SG37'
-                 },
-                 {
-                     FName: 'Ann'
-                 },
-                 {
-                     LName: 'Beech'
-                 },
-                 {
-                     Address: '81 George St, Glasgow PA1 2JR'
-                 },
-                 {
-                     Tel_No: '0141-848-3345'
-                 },
-                 {
-                     Sex: 'M'
-                 },
-                 {
-                     DOB: '1945-10-01'
-                 },
-                 {
-                     Salary: 30000
-                 },
-                 {
-                     NIN: 'WK442011B'
-                 }
-             ])
+    Pcode: 'AB2 3SU',
+
+    Tel_No: '01224-67125',
+
+    Fax_No: '01224-67111'
+
+)
+
+Branch.create(
+
+    Bno: 'B3',
+
+    Street: '163 Main St',
+
+    Area: 'Patrick',
+
+    City: 'Glasgow',
+
+    Pcode: 'G119QX',
+
+    Tel_No: '0141-339-2178',
+
+    Fax_No: '0141-339-4439'
+
+)
+
+Branch.create(
+
+    Bno: 'B4',
+
+    Street: '32 Manse Rd',
+
+    Area: 'Leigh',
+
+    City: 'Bristol',
+    Pcode: 'BS99 1NZ',
+
+    Tel_No: '0117-916-1170',
+
+    Fax_No: '0117-776-1114'
+
+)
+
+Branch.create(
+
+    Bno: 'B2',
+
+    Street: '56 Clover Dr',
+
+    Area: '',
+
+    City: 'London',
+
+    Pcode: 'NW10 6EU',
+
+    Tel_No: '0181-963-1030',
+    Fax_No: '0181-453-7992'
+
+)
+
+Staff.create(
+
+    Bno: 'SL21',
+
+    FName: 'John',
+
+    LName: 'White',
+    Address: '19 Taylor St, Cranford, London',
+
+    Tel_No: '0171-884-5112',
+
+    Position: 'Manager',
+
+    Sex: 'M',
+
+    DOB: '1945-10-01',
+
+    Salary: 30000,
+
+    NIN: 'WK442011B',
+
+    Bno: 'B5'
+
+)
+
+Staff.create(
+
+    Bno: 'SG37',
+
+    FName: 'Ann',
+
+    LName: 'Beech',
+
+    Address: '81 George St, Glasgow PA1 2JR',
+
+    Tel_No: '0141-848-3345',
+
+    Position: 'Snr Asst',
+
+    Sex: 'F',
+
+    DOB: '1960-11-10',
+
+    Salary: 12000,
+
+    NIN: 'WL432514C',
+
+    Bno: 'B3'
+
+)
 
 
-insert into staff values
-('SG37', 'Ann', 'Beech', '81 George St, Glasgow PA1 2JR',
-    '0141-848-3345', 'Snr Asst', 'F', '1960-11-10', 12000, 'WL432514C', 'B3');
-insert into staff values
-('SG14', 'David', 'Ford', '63 Ashby St, Patrick, Glasgow G11',
-    '0141-339-2177', 'Deputy', 'M', '1958-03-24', 18000, 'WL220658D', 'B3');
-insert into staff values
-('SA9', 'Mary', 'Howe', '2 Elm Pl, Aberdeen AB2 3SU', null,
-'Assistant', 'F', '1970-02-19', 9000, 'WM532187D', 'B7');
-insert into staff values
-('SG5', 'Susan', 'Brand', '5 Gt Western Rd, Glasgow G12',
-    '0141-334-2001', 'Manager', 'F', '1940-06-03', 24000, 'WK588932E', 'B3');
-insert into staff values
-('SL41', 'Julie', 'Lee', '28 Malvern ST, Kilburn NW2',
-    '0181-554-3541', 'Assistant', 'F', '1965-06-13', 9000, 'WA290573K', 'B5');
-insert into property_for_rent values
-('PA14', '16 Holhead', 'Dee', 'Aberdeen', 'AB7 5SU', 'House', 6, 650, 'CO46',
-    'SA9', 'B7');
-insert into property_for_rent values
-('PL94', '6 Argyll St', 'Kilburn', 'London', 'NW2', 'Flat', 4, 400, 'CO87',
-    'SL41', 'B5');
-insert into property_for_rent values
-('PG4', '6 Lawrence St', 'Patrick', 'Glasgow', 'G11 9QX', 'Flat', 3, 350,
-    'CO40', 'SG14', 'B3');
-insert into property_for_rent values
-('PG36', '2 Manor Rd', null, 'Glasgow', 'G32 4QX', 'Flat', 3, 375, 'CO93',
-    'SG37', 'B3');
-insert into property_for_rent values
-('PG21', '18 Dale Rd', 'Hynland', 'Glasgow', 'G12', 'House', 5, 600, 'CO87',
-    'SG37', 'B3');
-insert into property_for_rent values
-('PG16', '5 Novar Dr', 'Hynland', 'Glasgow', 'G12 9AX', 'Flat', 4, 450, 'CO93',
-    'SG14', 'B3');
-insert into client values
-('CR76', 'John', 'Kay', '56 High St, Putney, London SW1 4EH', '0171-774-5632',
-    'Flat', 425);
-insert into client values
-('CR56', 'Aline', 'Stewart', '64 Fern Dr, Pollock, Glasgow G42 0BL', '0141-848-1825',
-    'Flat', 350);
-insert into client values
-('CR74', 'Mike', 'Ritchie', '18 Tain ST, Gourock, PA1G 1YQ', '01475-392178',
-    'House', 750);
-insert into client values
-('CR62', 'Mary', 'Tregear', '5 Tarbot Rd, Kildary, Aberdeen AB9 3ST', '01224-176720',
-    'Flat', 600);
-insert into owner values
-('CO46', 'Joe', 'Keogh', '2 Fergis Dr, Banchory, Aberdeen AB2 7SX', '01224-861212');
-insert into owner values
-('CO87', 'Carol', 'Farrel', '6 Achray St, Glasgow G32 9DX', '0141-357-7419');
-insert into owner values
-('CO40', 'Tina', 'Murphy', '63 Well St, Shawlands, Glasgow G42', '0141-943-1728');
-insert into owner values
-('CO93', 'Tony', 'Shaw', '12 Park Pl, Hillhead, Glasgow G4 0QR', '0141-225-7025');
-insert into viewing values
-('CR56', 'PA14', '1995-05-24', 'too small');
-insert into viewing values
-('CR76', 'PG4', '1995-04-20', 'too remote');
-insert into viewing values
-('CR56', 'PG4', '1995-05-26', null);
-insert into viewing values
-('CR62', 'PA14', '1995-05-14', 'no dining room');
-insert into viewing values
-('CR56', 'PG36', '1995-04-28', null);
+Staff.create(
+
+    Bno: 'SG14',
+
+    FName: 'David',
+
+    LName: 'Ford',
+
+    Address: '63 Ashby St, Patrick, Glasgow G11',
+
+    Tel_No: '0141-339-2177',
+
+    Position: 'Deputy',
+
+    Sex: 'M',
+
+    DOB: '1958-03-24',
+
+    Salary: 18000,
+
+    NIN: 'WL220658D',
+
+    Bno: 'B3'
+
+)
+
+
+Staff.create(
+
+    Bno: 'SA9',
+
+    FName: 'Mary',
+
+    LName: 'Howe',
+
+    Address: '2 Elm Pl, Aberdeen AB2 3SU',
+
+    Tel_No: '',
+
+    Position: 'Assistant',
+
+    Sex: 'F',
+
+    DOB: '1970-02-19',
+
+    Salary: 9000,
+
+    NIN: 'WM532187D',
+    Bno: 'B7'
+
+)
+
+Staff.create(
+
+    Bno: 'SG5',
+
+    FName: 'Susan',
+
+    LName: 'Brand',
+
+    Address: '5 Gt Western Rd, Glasgow G12',
+    Tel_No: '0141-334-2001',
+    Position: 'Manager',
+
+    Sex: 'F',
+    DOB: '1940-06-03',
+
+    Salary: 24000,
+
+    NIN: 'WK588932E',
+
+    Bno: 'B3'
+
+)
+
+
+Staff.create(
+
+    Bno: 'SL41',
+
+    FName: 'Julie',
+
+    LName: 'Lee',
+
+    Address: '28 Malvern ST, Kilburn NW2',
+    Tel_No: '0181-554-3541',
+
+    Position: 'Assistant',
+
+    Sex: 'F',
+
+    DOB: '1965-06-13',
+
+    Salary: 9000,
+
+    NIN: 'WA290573K',
+
+    Bno: 'B5'
+
+)
+
+
+PropertyForRent.create(
+
+    Pno: 'SL41',
+
+    Street: 'Julie',
+
+    Area: 'Lee',
+
+    City: '28 Malvern ST, Kilburn NW2',
+
+    Pcode: '0181-554-3541',
+
+    Type: 'House',
+
+    Rooms: 6,
+
+    Rent: 650,
+
+    Ono: 'CO46',
+    Sno: 'SA9',
+
+    Bno: 'B7'
+
+)
+
+
+PropertyForRent.create(
+
+    Pno: 'PL94',
+
+    Street: '6 Argyll St',
+
+    Area: 'Kilburn',
+
+    City: 'London',
+
+    Pcode: 'NW2',
+
+    Type: 'Flat',
+
+    Rooms: 4,
+
+    Rent: 400,
+
+    Ono: 'CO87',
+
+    Sno: 'SL41',
+    Bno: 'B5'
+
+)
+
+
+PropertyForRent.create(
+
+    Pno: 'PG4',
+
+    Street: '6 Lawrence St',
+
+    Area: 'Patrick',
+
+    City: 'Glasgow',
+
+    Pcode: 'G11 9QX',
+
+    Type: 'Flat',
+
+    Rooms: 3,
+
+    Rent: 350,
+
+    Ono: 'CO40',
+
+    Sno: 'SG14',
+
+    Bno: 'B3'
+
+)
+
+
+PropertyForRent.create(
+
+    Pno: 'PG36',
+
+    Street: '2 Manor Rd',
+
+    Area: '',
+
+    City: 'Glasgow',
+
+    Pcode: 'G32 4QX',
+
+    Type: 'Flat',
+
+    Rooms: 3,
+
+    Rent: 375,
+
+    Ono: 'CO93',
+
+    Sno: 'SG37',
+
+    Bno: 'B3'
+
+)
+
+
+PropertyForRent.create(
+
+    Pno: 'PG21',
+
+    Street: '18 Dale Rd',
+
+    Area: 'Hynland',
+
+    City: 'Glasgow',
+
+    Pcode: 'G12',
+
+    Type: 'Hynland',
+
+    Rooms: 5,
+
+    Rent: 600,
+
+    Ono: 'CO87',
+
+    Sno: 'SG37',
+
+    Bno: 'B3'
+
+)
+
+PropertyForRent.create(
+
+    Pno: 'PG16',
+
+    Street: '5 Novar Dr',
+
+    Area: 'Hynland',
+
+    City: 'Glasgow',
+
+    Pcode: 'G12 9AX',
+
+    Type: 'Flat',
+
+    Rooms: 4,
+
+    Rent: 450,
+
+    Ono: 'CO93',
+
+    Sno: 'SG14',
+
+    Bno: 'B3'
+
+)
+
+
+Client.create(
+
+    Cno: 'CR76',
+
+    FName: 'John',
+
+    LName: 'Kay',
+
+    Address: '56 High St, Putney, London SW1 4EH',
+
+    Tel_No: '0171-774-5632',
+
+    Pref_type: 'Flat',
+
+    Max_rent: 425
+
+
+)
+
+
+Client.create(
+
+    Cno: 'CR56',
+
+    FName: 'Aline',
+
+    LName: 'Stewart',
+
+    Address: '64 Fern Dr, Pollock, Glasgow G42 0BL',
+
+    Tel_No: '0141-848-1825',
+
+    Pref_type: 'Flat',
+
+    Max_rent: 350
+
+
+)
+
+
+Client.create(
+
+    Cno: 'CR74',
+
+    FName: 'Mike',
+
+    LName: 'Ritchie',
+
+    Address: '18 Tain ST, Gourock, PA1G 1YQ',
+
+    Tel_No: '01475-392178',
+
+    Pref_type: 'House',
+    Max_rent: 750
+
+
+)
+
+
+Client.create(
+
+    Cno: 'CR62',
+
+    FName: 'Mary',
+
+    LName: 'Tregear',
+
+    Address: '5 Tarbot Rd, Kildary, Aberdeen AB9 3ST',
+
+    Tel_No: '01224-176720',
+
+    Pref_type: 'Flat',
+
+    Max_rent: 600
+
+
+)
+
+
+Owner.create(
+
+    Ono: 'CR62',
+
+    FName: 'Joe',
+
+    LNname: 'Keogh',
+
+    Address: '2 Fergis Dr, Banchory, Aberdeen AB2 7SX',
+
+    Tel_No: '01224-861212'
+
+
+)
+
+Owner.create(
+
+    Ono: 'CO87',
+
+    FName: 'Carol',
+
+    LNname: 'Farrel',
+    Address: '6 Achray St, Glasgow G32 9DX',
+
+    Tel_No: '0141-357-7419'
+
+
+)
+
+
+Owner.create(
+
+    Ono: 'CO40',
+
+    FName: 'Tina',
+
+    LNname: 'Murphy',
+
+    Address: '63 Well St, Shawlands, Glasgow G42',
+
+    Tel_No: '0141-943-1728'
+
+
+)
+
+
+Owner.create(
+
+    Ono: 'CO93',
+
+    FName: 'Tony',
+    LNname: 'Shaw',
+
+    Address: '12 Park Pl, Hillhead, Glasgow G4 0QR',
+
+    Tel_No: '0141-225-7025'
+
+
+)
+
+
+Viewing.create(
+
+    Cno: 'CR56',
+
+    Pno: 'PA14',
+    Date: '1995-05-24',
+
+    Comment: 'too small'
+
+
+)
+
+
+Viewing.create(
+
+    Cno: 'CR76',
+
+    Pno: 'PA4',
+
+    Date: '1995-04-20',
+
+    Comment: 'too remote'
+
+
+)
+
+
+Viewing.create(
+
+    Cno: 'CR56',
+
+    Pno: 'PG4',
+
+    Date: '1995-05-26',
+
+    Comment: ''
+
+
+)
+
+
+Viewing.create(
+
+    Cno: 'CR56',
+
+    Pno: 'PA14',
+
+    Date: '1995-05-14',
+
+    Comment: 'no dining room'
+
+
+)
+
+
+Viewing.create(
+
+    Cno: 'CR56',
+
+    Pno: 'PG36',
+
+    Date: '1995-04-28',
+
+    Comment: ''
+
+
+)
+
