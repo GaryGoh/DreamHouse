@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  Pno: MyString
+  postcode_id: 1
+  type_id: 
+  Rooms: 1
+  Rent: 1
+  owner_id: 1
+  staff_id: 1
+  branch_id: 1
+
+two:
+  Pno: MyString
+  postcode_id: 1
+  type_id: 
+  Rooms: 1
+  Rent: 1
+  owner_id: 1
+  staff_id: 1
+  branch_id: 1

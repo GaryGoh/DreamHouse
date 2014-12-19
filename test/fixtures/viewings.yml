@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  client_id: 1
+  propertyForRent_id: 1
+  Date: 2014-12-18
+  Comment: MyText
+
+two:
+  client_id: 1
+  propertyForRent_id: 1
+  Date: 2014-12-18
+  Comment: MyText

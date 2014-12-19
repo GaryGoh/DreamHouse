@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  Bno: 
+  Tel_No: 
+  Fax_No: 
+
+two:
+  Bno: 
+  Tel_No: 
+  Fax_No: 

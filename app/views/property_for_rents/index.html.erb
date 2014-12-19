@@ -1,0 +1,47 @@
+<h1>Listing property_for_rents</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Pno</th>
+    <th>Street</th>
+    <th>Area</th>
+    <th>City</th>
+    <th>Pcode</th>
+    <th>Type</th>
+    <th>Rooms</th>
+    <th>Rent</th>
+    <th>Owner</th>
+    <th>Staff</th>
+    <th>Branch</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @property_for_rents.each do |property_for_rent| %>
+      <tr>
+        <td><%= property_for_rent.Pno %></td>
+        <td><%= property_for_rent.Street %></td>
+        <td><%= property_for_rent.Area %></td>
+        <td><%= property_for_rent.City %></td>
+        <td><%= property_for_rent.Pcode %></td>
+        <td><%= property_for_rent.Type %></td>
+        <td><%= property_for_rent.Rooms %></td>
+        <td><%= property_for_rent.Rent %></td>
+        <td><%= property_for_rent.Ono %></td>
+        <td><%= property_for_rent.Sno %></td>
+        <td><%= property_for_rent.Bno %></td>
+        <td><%= link_to 'Show', property_for_rent %></td>
+        <td><%= link_to 'Edit', edit_property_for_rent_path(property_for_rent) %></td>
+        <td><%= link_to 'Destroy', property_for_rent, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Property for rent', new_property_for_rent_path %>

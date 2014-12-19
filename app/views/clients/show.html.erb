@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cno:</strong>
+  <%= @client.Cno %>
+</p>
+
+<p>
+  <strong>Fname:</strong>
+  <%= @client.FName %>
+</p>
+
+<p>
+  <strong>Lname:</strong>
+  <%= @client.LName %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @client.Address %>
+</p>
+
+<p>
+  <strong>Tel no:</strong>
+  <%= @client.Tel_No %>
+</p>
+
+<p>
+  <strong>Pref type:</strong>
+  <%= @client.Pref_type %>
+</p>
+
+<p>
+  <strong>Max rent:</strong>
+  <%= @client.Max_rent %>
+</p>
+
+<%= link_to 'Edit', edit_client_path(@client) %> |
+<%= link_to 'Back', clients_path %>

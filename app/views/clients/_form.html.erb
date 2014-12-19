@@ -1,0 +1,45 @@
+<%= form_for(@client) do |f| %>
+  <% if @client.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@client.errors.count, "error") %> prohibited this client from being saved:</h2>
+
+      <ul>
+      <% @client.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Cno %><br>
+    <%= f.text_field :Cno %>
+  </div>
+  <div class="field">
+    <%= f.label :FName %><br>
+    <%= f.text_field :FName %>
+  </div>
+  <div class="field">
+    <%= f.label :LName %><br>
+    <%= f.text_field :LName %>
+  </div>
+  <div class="field">
+    <%= f.label :Address %><br>
+    <%= f.text_field :Address %>
+  </div>
+  <div class="field">
+    <%= f.label :Tel_No %><br>
+    <%= f.text_field :Tel_No %>
+  </div>
+  <div class="field">
+    <%= f.label :Pref_type %><br>
+    <%= f.select :Pref_type, PropertyForRent.all.map{ |s|
+      [(s.Type), s.Type] }.uniq, {}, { :class => "selectpicker", :nameui => "huge"} %>  </div>
+  <div class="field">
+    <%= f.label :Max_rent %><br>
+    <%= f.number_field :Max_rent %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

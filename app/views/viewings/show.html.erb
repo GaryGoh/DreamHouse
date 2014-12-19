@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Client:</strong>
+  <%= @viewing.client_id %>
+</p>
+
+<p>
+  <strong>Propertyforrent:</strong>
+  <%= @viewing.propertyForRent_id %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @viewing.Date %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @viewing.Comment %>
+</p>
+
+<%= link_to 'Edit', edit_viewing_path(@viewing) %> |
+<%= link_to 'Back', viewings_path %>

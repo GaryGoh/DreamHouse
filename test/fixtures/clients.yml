@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  Cno: MyString
+  FName: MyString
+  LName: MyString
+  Address: 
+  Tel_No: MyString
+  Pref_type: MyString
+  Max_rent: 1
+
+two:
+  Cno: MyString
+  FName: MyString
+  LName: MyString
+  Address: 
+  Tel_No: MyString
+  Pref_type: MyString
+  Max_rent: 1

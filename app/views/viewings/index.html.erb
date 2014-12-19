@@ -1,0 +1,33 @@
+<h1>Listing viewings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Client</th>
+      <th>Propertyforrent</th>
+      <th>Date</th>
+      <th>Comment</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @viewings.each do |viewing| %>
+      <tr>
+        <td><%= viewing.client_id %></td>
+        <td><%= viewing.propertyForRent_id %></td>
+        <td><%= viewing.Date %></td>
+        <td><%= viewing.Comment %></td>
+        <td><%= link_to 'Show', viewing %></td>
+        <td><%= link_to 'Edit', edit_viewing_path(viewing) %></td>
+        <td><%= link_to 'Destroy', viewing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Viewing', new_viewing_path %>

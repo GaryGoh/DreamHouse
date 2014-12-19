@@ -1,0 +1,35 @@
+<h1>Listing owners</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ono</th>
+      <th>Fname</th>
+      <th>Lnname</th>
+      <th>Address</th>
+      <th>Tel no</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @owners.each do |owner| %>
+      <tr>
+        <td><%= owner.Ono %></td>
+        <td><%= owner.FName %></td>
+        <td><%= owner.LNname %></td>
+        <td><%= owner.Address %></td>
+        <td><%= owner.Tel_No %></td>
+        <td><%= link_to 'Show', owner %></td>
+        <td><%= link_to 'Edit', edit_owner_path(owner) %></td>
+        <td><%= link_to 'Destroy', owner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Owner', new_owner_path %>

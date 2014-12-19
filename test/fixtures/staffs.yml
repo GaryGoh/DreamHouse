@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  Sno: 
+  FName: 
+  LName: 
+  Address: 
+  Tel_No: MyString
+  Position_id: 1
+  Sex: MyString
+  DOB: 2014-12-18
+  Salary: 1
+  NIN: MyString
+  branch_id: 1
+
+two:
+  Sno: 
+  FName: 
+  LName: 
+  Address: 
+  Tel_No: MyString
+  Position_id: 1
+  Sex: MyString
+  DOB: 2014-12-18
+  Salary: 1
+  NIN: MyString
+  branch_id: 1

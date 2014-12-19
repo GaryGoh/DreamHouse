@@ -1,0 +1,74 @@
+<%= form_for(@staff) do |f| %>
+    <% if @staff.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@staff.errors.count, "error") %> prohibited this staff from being saved:</h2>
+
+          <ul>
+            <% @staff.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :Sno %>
+      <br>
+      <%= f.text_field :Sno %>
+    </div>
+    <div class="field">
+      <%= f.label :FName %>
+      <br>
+      <%= f.text_field :FName %>
+    </div>
+    <div class="field">
+      <%= f.label :LName %>
+      <br>
+      <%= f.text_field :LName %>
+    </div>
+    <div class="field">
+      <%= f.label :Address %>
+      <br>
+      <%= f.text_field :Address %>
+    </div>
+    <div class="field">
+      <%= f.label :Tel_No %>
+      <br>
+      <%= f.text_field :Tel_No %>
+    </div>
+    <div class="field">
+      <%= f.label :Position %>
+      <br>
+      <%= f.text_field :Position %>
+    </div>
+    <div class="field">
+      <%= f.label :Sex %>
+      <br>
+      <%= f.text_field :Sex %>
+    </div>
+    <div class="field">
+      <%= f.label :DOB %>
+      <br>
+      <%= f.date_select :DOB %>
+    </div>
+    <div class="field">
+      <%= f.label :Salary %>
+      <br>
+      <%= f.number_field :Salary %>
+    </div>
+    <div class="field">
+      <%= f.label :NIN %>
+      <br>
+      <%= f.text_field :NIN %>
+    </div>
+    <div class="field">
+      <%= f.label :Bno %>
+      <br>
+      <%= f.select :Bno, Branch.all.map { |s|
+        [(s.Bno), s.Bno] }.uniq, {}, {:class => "selectpicker", :nameui => "huge"} %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>
+

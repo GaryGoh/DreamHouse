@@ -1,0 +1,81 @@
+<%= form_for(@property_for_rent) do |f| %>
+    <% if @property_for_rent.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@property_for_rent.errors.count, "error") %> prohibited this property_for_rent from being
+            saved:</h2>
+
+          <ul>
+            <% @property_for_rent.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :Pno %>
+      <br>
+      <%= f.text_field :Pno %>
+    </div>
+    <div class="field">
+      <%= f.label :Street %>
+      <br>
+      <%= f.text_field :Street %>
+    </div>
+    <div class="field">
+      <%= f.label :Area %>
+      <br>
+      <%= f.text_field :Area %>
+    </div>
+    <div class="field">
+      <%= f.label :City %>
+      <br>
+      <%= f.text_field :City %>
+    </div>
+    <div class="field">
+      <%= f.label :Pcode %>
+      <br>
+      <%= f.text_field :Pcode %>
+    </div>
+    <div class="field">
+      <%= f.label :Type %>
+      <br>
+      <%= f.text_field :Type %>
+    </div>
+    <div class="field">
+      <%= f.label :Rooms %>
+      <br>
+      <%= f.number_field :Rooms %>
+    </div>
+    <div class="field">
+      <%= f.label :Rent %>
+      <br>
+      <%= f.number_field :Rent %>
+    </div>
+    <div class="field">
+      <%= f.label :Ono %>
+      <br>
+      <%= f.select :Ono, Owner.all.map { |s|
+        [(s.Ono), s.Ono] }.uniq, {}, {:class => "selectpicker", :nameui => "huge"} %>
+    </div>
+
+    <div class="field" id="branch-select">
+      <%= f.label :Bno %>
+      <br>
+      <%= f.collection_select :Bno, Branch.all.uniq, :Bno, :Bno, :promot => "Select a Bno then select a Sno" %>
+
+    </div>
+
+    <div class="field" id="staff-field">
+      <%= f.label :Sno %>
+      <br>
+      <%= f.select :Sno, Staff.all.map { |s|
+        [(s.Sno), s.Sno] }.uniq, {}, {:class => "selectpicker", :nameui => "huge"} %>
+
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>
+

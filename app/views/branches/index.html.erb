@@ -1,0 +1,40 @@
+<h1>Listing branches</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Bno</th>
+    <th>Street</th>
+    <th>Area</th>
+    <th>City</th>
+    <th>Pcode</th>
+    <th>Tel no</th>
+    <th>Fax no</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @branches.each do |branch| %>
+      <tr>
+        <td><%= branch.Bno %></td>
+        <td><%= branch.Street %></td>
+        <td><%= branch.Area %></td>
+        <td><%= branch.City %></td>
+        <td><%= branch.Pcode %></td>
+        <td><%= branch.Tel_No %></td>
+        <td><%= branch.Fax_No %></td>
+
+        <td><%= link_to 'Show', branch %></td>
+        <td><%= link_to 'Edit', edit_branch_path(branch) %></td>
+        <td><%= link_to 'Destroy', branch, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Branch', new_branch_path %>

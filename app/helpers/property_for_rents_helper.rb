@@ -1,0 +1,2 @@
+module PropertyForRentsHelper
+end
